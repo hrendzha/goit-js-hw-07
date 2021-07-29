@@ -13,7 +13,10 @@ function onRenderBtnClick() {
 }
 
 function createBoxes(amount) {
-    const basicSize = 30;
+    const basicSize = refs.boxes.firstElementChild
+        ? Number.parseInt(refs.boxes.lastElementChild.style.width) + 10
+        : 30;
+
     const boxRefs = [];
 
     for (var i = 0; i < amount; i += 1) {
